@@ -1,14 +1,17 @@
-<div class="card mr-2" style="width: 18rem;">
+<div class="card mr-2">
     {% if instance.image %}
-      <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }}" style="width: auto; height: 300px;">
+      <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }}"
+           style="width: auto; height: 300px;">
     {% endif %}
-  <div class="card-body">
-      <small>{{ instance.created_at|timesince }} назад</small>
-      <h5 class="card-title">{{ instance.title }}</h5>
-    <p class="card-text">{{ instance.description|truncatewords:15 }}</p>
-    <div class="col">
-        <a href="{{ instance.get_absolute_url }}" class="btn btn-outline-secondary mb-2">Подробнее</a>
-        {% include "products/snippets/update-cart.html" with product=instance cart=cart %}
+    <div class="card-body">
+        <h5 class="card-title">{{ instance.title }}</h5>
+        <h5 class="card-text">{{ instance.price|floatformat:2 }} ₽</h5>
+        <p class="card-text">{{ instance.description|truncatewords:15 }}</p>
+        <p class="card-text"><small class="text-muted">{{ instance.created_at|timesince }} назад</small></p>
+        <hr/>
+{#        <div class="col">#}
+            <a href="{{ instance.get_absolute_url }}" class="btn btn-outline-secondary mb-2">Подробнее</a>
+            {% include "products/snippets/update-cart.html" with product=instance cart=cart %}
+{#        </div>#}
     </div>
-  </div>
 </div>

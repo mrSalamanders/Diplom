@@ -4,6 +4,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import home_page, contact_page
 
+admin.site.site_header = 'Autobest | Администрирование'                    # default: "Django Administration"
+admin.site.index_title = 'Autobest'                 # default: "Site administration"
+admin.site.site_title = 'Админ-панель'  # default: "Django site admin"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
