@@ -70,7 +70,7 @@
             <p>Всего: {{ object.cart.total|floatformat:2|localize }}</p>
             <p>Адрес доставки: {{ object.shipping_address.get_address|safe }}</p>
             <p>Платёжный адрес: {{ object.billing_address.get_address|safe }}</p>
-            <p>Всего + доставка: {{ object.shipping_total|floatformat:2|localize }}</p>
+            <p>Доставка: {{ object.shipping_total|floatformat:2|localize }}</p>
             <p>Итого: {{ object.order_total|floatformat:2|localize }}</p>
             <form class="form" method="post" action="{% url 'carts:checkout' %}">{% csrf_token %}
                 <input type="hidden" name="order_code" value="{{ object.order_code }}">

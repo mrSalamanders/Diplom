@@ -24,17 +24,19 @@
                   <td><a href="{% url 'products:detail' product.slug %}">{{product.title}}</a></td>
                   <td>{{product.price|floatformat:2|localize }}</td>
                   <td>
-                     {% include "carts/snippets/remove-product.html" with product_id=product.id cart=cart %}
+                      <button type="button" class="btn btn-outline-secondary">-</button> 1 <button type="button" class="btn btn-outline-secondary">+</button>
+
+                      {% include "carts/snippets/remove-product.html" with product_id=product.id cart=cart %}
                   </td>
                 </tr>
             {% endfor %}
             <tr>
                 <td colspan="3"></td>
-                <td><b>Subtotal: </b> <span class="cart-subTotal">{{ cart.subtotal|floatformat:2|localize }}</span> ₽</td>
+                <td><b>Предытог: </b> <span class="cart-subTotal">{{ cart.subtotal|floatformat:2|localize }}</span> ₽</td>
             </tr>
             <tr>
                 <td colspan="3"></td>
-                <td><b>Total: </b> <span class="cart-total">{{ cart.total|floatformat:2|localize }}</span> ₽</td>
+                <td><b>Итого: </b> <span class="cart-total">{{ cart.total|floatformat:2|localize }}</span> ₽</td>
             </tr>
             <tr>
                 <td colspan="3"></td>

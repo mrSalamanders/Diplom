@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 
     # our apps
     'accounts',
@@ -142,3 +143,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
 LOGIN_REDIRECT_URL = 'home_url'
 LOGOUT_REDIRECT_URL = 'accounts:login'
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}

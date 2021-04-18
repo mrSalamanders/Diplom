@@ -136,6 +136,14 @@ class RegisterForm(forms.Form):
 
 
 class GuestForm(forms.Form):
+    full_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Фамилия Имя"
+            }
+        )
+    )
     email = forms.EmailField(
         widget=forms.EmailInput(
             attrs={
@@ -144,3 +152,4 @@ class GuestForm(forms.Form):
             }
         )
     )
+    reason = "ПОКУПКА"

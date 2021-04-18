@@ -106,19 +106,21 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.superuser
 
     class Meta:
-        verbose_name = "Клиент"
-        verbose_name_plural = "Клиенты"
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
 
 
 class GuestEmail(models.Model):
+    full_name = models.TextField()
     email = models.EmailField()
-    active = models.BooleanField(default=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    reason = models.TextField()
+    # active = models.BooleanField(default=True)
+    updated_at = models.DateField(auto_now=True)
+    # created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.email
 
     class Meta:
-        verbose_name = "Гость"
-        verbose_name_plural = "Гости"
+        verbose_name = "Обращение"
+        verbose_name_plural = "Обращения"

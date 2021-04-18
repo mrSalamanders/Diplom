@@ -9,11 +9,12 @@
             <small>{{ object.created_at|timesince }} назад</small>
             <h2>{{ object.title }}</h2>
             <img src="{{ object.image.url }}" width="500">
-            <p>{{ object.description|linebreaks }}</p>
         </div>
         <div class="col-12 col-md-6">
             {% include "products/snippets/update-cart.html" with product=object cart=cart %}
+            <p>{{ object.description|linebreaks }}</p>
         </div>
+
     </div>
 {% endblock %}
 
