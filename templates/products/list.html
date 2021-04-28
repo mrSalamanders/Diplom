@@ -5,13 +5,19 @@
 {% endblock %}
 
 {% block content %}
-   <div class="row">
+
+    {% include "products/snippets/tag.html" %}
+
+    <hr/>
+
+    <div class="row">
+        {#   {% regroup object by title as object_list %}#}
         {% for object in object_list %}
             <div class="col-3 mr-2">
                 {% include "products/snippets/card.html" with instance=object %}
             </div>
         {% endfor %}
-   </div>
+    </div>
 {% endblock %}
 
 {% block bottom %}

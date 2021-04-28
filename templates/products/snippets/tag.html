@@ -1,0 +1,58 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Марка
+    </button>
+    <div class="dropdown-menu" style="height: auto; max-height: 300px; overflow-y: scroll;">
+        <ul></ul>
+        {#            {% for object in object_list %}#}
+        {#                {% for tg in object.tag_set.all %}#}
+        {#                    {% ifchanged tg.title %}#}
+        {#                        <a class="dropdown-item" href="/search/?q={{ tg.title }}">{{ tg.title }}</a>#}
+        {#                    {% endifchanged %}#}
+        {#                {% endfor %}#}
+        {#            {% endfor %}#}
+        <a class="dropdown-item" href="/search/?q=Audi">Audi</a>
+        <a class="dropdown-item" href="/search/?q=BMW">BMW</a>
+        <a class="dropdown-item" href="/search/?q=Cadillac">Cadillac</a>
+        <a class="dropdown-item" href="/search/?q=Chevrolet">Chevrolet</a>
+        <a class="dropdown-item" href="/search/?q=Citroen">Citroen</a>
+        <a class="dropdown-item" href="/search/?q=Daewoo">Daewoo</a>
+        <a class="dropdown-item" href="/search/?q=Ford">Ford</a>
+        <a class="dropdown-item" href="/search/?q=Hyundai">Hyundai</a>
+        <a class="dropdown-item" href="/search/?q=Infinity">Infinity</a>
+        <a class="dropdown-item" href="/search/?q=Jeep">Jeep</a>
+        <a class="dropdown-item" href="/search/?q=Kia">Kia</a>
+        <a class="dropdown-item" href="/search/?q=Land Rover">Land Rover</a>
+        <a class="dropdown-item" href="/search/?q=Lexus">Lexus</a>
+        <a class="dropdown-item" href="/search/?q=MINI">MINI</a>
+        <a class="dropdown-item" href="/search/?q=Mazda">Mazda</a>
+        <a class="dropdown-item" href="/search/?q=Mercedes-Benz">Mercedes-Benz</a>
+        <a class="dropdown-item" href="/search/?q=Mitsubishi">Mitsubishi</a>
+        <a class="dropdown-item" href="/search/?q=Nissan">Nissan</a>
+        <a class="dropdown-item" href="/search/?q=Opel">Opel</a>
+        <a class="dropdown-item" href="/search/?q=Peugeot">Peugeot</a>
+        <a class="dropdown-item" href="/search/?q=Porsche">Porsche</a>
+        <a class="dropdown-item" href="/search/?q=Renault">Renault</a>
+        <a class="dropdown-item" href="/search/?q=Skoda">Skoda</a>
+        <a class="dropdown-item" href="/search/?q=SsangYong">SsangYong</a>
+        <a class="dropdown-item" href="/search/?q=Subaru">Subaru</a>
+        <a class="dropdown-item" href="/search/?q=Suzuki">Suzuki</a>
+        <a class="dropdown-item" href="/search/?q=Toyota">Toyota</a>
+        <a class="dropdown-item" href="/search/?q=Volkswagen">Volkswagen</a>
+        <a class="dropdown-item" href="/search/?q=Volvo">Volvo</a>
+        <a class="dropdown-item" href="/search/?q=ГАЗ">ГАЗ</a>
+        <a class="dropdown-item" href="/search/?q=УАЗ">УАЗ</a>
+        <a class="dropdown-item" href="/search/?q=Lada">Lada</a>
+    </div>
+</div>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Категория
+    </button>
+    <div class="dropdown-menu" style="height: auto; max-height: 300px; overflow-y: scroll;">
+        <a class="dropdown-item" href="/search/?q=Автохимия">Автохимия</a>
+        <a class="dropdown-item" href="/search/?q=Расходники">Расходники</a>
+        <a class="dropdown-item" href="/search/?q=Жидкость">Жидкость</a>
+    </div>
+</div>

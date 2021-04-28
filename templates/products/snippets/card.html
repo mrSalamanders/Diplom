@@ -7,6 +7,12 @@
         <h5 class="card-title">{{ instance.title }}</h5>
         <h5 class="card-text">{{ instance.price|floatformat:2 }} ₽</h5>
         <p class="card-text" style="width: auto; height: 70px;">{{ instance.description|truncatewords:5 }}</p>
+        {% if instance.tag_set.all %}
+            <hr/>
+        {% endif %}
+        {% for tg in instance.tag_set.all %}
+            <a href="/search/?q={{ tg.title }}" class="card-text" style="padding-right: 6px; padding-left: 4px; border-radius: 5px; width: auto; height: 70px; background-color: {{ tg.color }}">• {{ tg }}</a>
+        {% endfor %}
         <p class="card-text"><small class="text-muted">{{ instance.created_at|timesince }} назад</small></p>
         <hr/>
 {#        <div class="col">#}

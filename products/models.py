@@ -83,6 +83,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
+        ordering = ["title"]
 
 
 def product_pre_save_receiver(sender, instance, *args, **kwargs):
