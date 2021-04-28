@@ -18,7 +18,7 @@
         <a class="nav-link nav-cart-count" href="{% url 'carts:home' %}">{{ request.session.cart_items }} 🛒</a>
       </li>
       <li class="nav-item {% if request.path == products_list_url %}active{% endif %}">
-        <a class="nav-link" href="{% url "products:list" %}">Товары</a>
+        <a class="nav-link" href="{% url "products:list" %}">Все товары</a>
       </li>
       <li class="nav-item {% if request.path == contact_url %}active{% endif %}">
         <a class="nav-link" href="{% url "contact_url" %}">Обратиться к нам</a>

@@ -8,9 +8,11 @@
             {{ instance.title }}
         </h5>
 
-        {% for tg in instance.tag_set.all %}
-            <a href="/search/?q={{ tg.title }}" class="card-text" style="padding-right: 6px; padding-left: 4px; border-radius: 5px; width: fit-content; height: auto; margin-top: 0.5rem; background-color: {{ tg.color }}">• {{ tg }}</a>
-        {% endfor %}
+        <div class="list-group" style="height: auto; max-height: 5rem; overflow-y: scroll; margin-top: 0.5rem;">
+            {% for tg in instance.tag_set.all %}
+                <a href="/search/?q={{ tg.title }}" class="card-text" style="padding-right: 6px; padding-left: 4px; margin-top: 2px; border-radius: 5px; width: fit-content; height: auto; background-color: {{ tg.color }}">• {{ tg }}</a>
+            {% endfor %}
+        </div>
 
         {% if instance.tag_set.all %}
             <hr/>
@@ -18,7 +20,7 @@
 
         <h5 class="card-text">{{ instance.price|floatformat:2 }} ₽</h5>
 
-        <p class="card-text" style="max-height: 1rem">{{ instance.description|truncatewords:5 }}</p>
+        <p class="card-text" style="max-height: 1rem; font-size: small">{{ instance.description|truncatewords:10 }}</p>
         <div class="mt-auto">
             <p class="card-text"><small class="text-muted">{{ instance.created_at|timesince }} назад</small></p>
             <hr/>
