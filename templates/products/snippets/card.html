@@ -1,23 +1,29 @@
-<div class="card mr-2">
+<div class="card" style="min-height: 42rem; margin-top: 0.5rem">
     {% if instance.image %}
-      <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }}"
-           style="width: auto; height: 200px;">
+        <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }}"
+             style="width: auto; height: 200px;">
     {% endif %}
-    <div class="card-body">
-        <h5 class="card-title">{{ instance.title }}</h5>
-        <h5 class="card-text">{{ instance.price|floatformat:2 }} ₽</h5>
-        <p class="card-text" style="width: auto; height: 70px;">{{ instance.description|truncatewords:5 }}</p>
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+            {{ instance.title }}
+        </h5>
+
+        {% for tg in instance.tag_set.all %}
+            <a href="/search/?q={{ tg.title }}" class="card-text" style="padding-right: 6px; padding-left: 4px; border-radius: 5px; width: fit-content; height: auto; margin-top: 0.5rem; background-color: {{ tg.color }}">• {{ tg }}</a>
+        {% endfor %}
+
         {% if instance.tag_set.all %}
             <hr/>
         {% endif %}
-        {% for tg in instance.tag_set.all %}
-            <a href="/search/?q={{ tg.title }}" class="card-text" style="padding-right: 6px; padding-left: 4px; border-radius: 5px; width: auto; height: 70px; background-color: {{ tg.color }}">• {{ tg }}</a>
-        {% endfor %}
-        <p class="card-text"><small class="text-muted">{{ instance.created_at|timesince }} назад</small></p>
-        <hr/>
-{#        <div class="col">#}
-            <a href="{{ instance.get_absolute_url }}" class="btn btn-outline-secondary mb-2">Подробнее</a>
+
+        <h5 class="card-text">{{ instance.price|floatformat:2 }} ₽</h5>
+
+        <p class="card-text" style="max-height: 1rem">{{ instance.description|truncatewords:5 }}</p>
+        <div class="mt-auto">
+            <p class="card-text"><small class="text-muted">{{ instance.created_at|timesince }} назад</small></p>
+            <hr/>
             {% include "products/snippets/update-cart.html" with product=instance cart=cart %}
-{#        </div>#}
+            <a href="{{ instance.get_absolute_url }}" class="btn btn-block btn-outline-secondary" style="margin-top: 0.5rem">Подробнее</a>
+        </div>
     </div>
 </div>

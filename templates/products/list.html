@@ -11,9 +11,8 @@
     <hr/>
 
     <div class="row">
-        {#   {% regroup object by title as object_list %}#}
         {% for object in object_list %}
-            <div class="col-3 mr-2">
+            <div class="col-sm-3">
                 {% include "products/snippets/card.html" with instance=object %}
             </div>
         {% endfor %}
