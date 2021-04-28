@@ -32,15 +32,15 @@ class OrderManager(models.Manager):
 
 
 class Order(models.Model):
-    billing_profile = models.ForeignKey(BillingProfile, on_delete=models.SET_NULL, null=True, blank=True)
-    order_code = models.CharField(max_length=120, blank=True)
-    shipping_address = models.ForeignKey(Address, related_name='shipping_address', null=True, blank=True, on_delete=models.SET_NULL)
-    billing_address = models.ForeignKey(Address, related_name='billing_address', null=True, blank=True, on_delete=models.SET_NULL)
-    cart = models.ForeignKey(Cart, on_delete=models.SET_NULL, null=True, blank=False)
-    status = models.CharField(max_length=120, default='created', choices=ORDER_STATUS_CHOICES)
-    shipping_total = models.DecimalField(max_digits=30, decimal_places=4, default=10)
-    order_total = models.DecimalField(max_digits=30, decimal_places=4, default=0)
-    active = models.BooleanField(default=True)
+    billing_profile = models.ForeignKey(BillingProfile, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Профиль оплаты')
+    order_code = models.CharField(max_length=120, blank=True, verbose_name='Код заказа')
+    shipping_address = models.ForeignKey(Address, related_name='shipping_address', null=True, blank=True, on_delete=models.SET_NULL, verbose_name='Адрес доставки')
+    billing_address = models.ForeignKey(Address, related_name='billing_address', null=True, blank=True, on_delete=models.SET_NULL, verbose_name='Платёжный адрес')
+    cart = models.ForeignKey(Cart, on_delete=models.SET_NULL, null=True, blank=False, verbose_name='Корзина')
+    status = models.CharField(max_length=120, default='created', choices=ORDER_STATUS_CHOICES, verbose_name='Статус')
+    shipping_total = models.DecimalField(max_digits=30, decimal_places=4, default=10, verbose_name='Итого (Доставка)')
+    order_total = models.DecimalField(max_digits=30, decimal_places=4, default=0, verbose_name='Итого (Заказ)')
+    active = models.BooleanField(default=True, verbose_name='Активен?')
 
     def __str__(self):
         return self.order_code

@@ -58,14 +58,14 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=50)
-    slug = models.SlugField(blank=True)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=20, decimal_places=4, default=39.99)
-    image = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
-    featured = models.BooleanField(default=False)
-    active = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=50, verbose_name='Название')
+    slug = models.SlugField(blank=True, verbose_name='Ярлык')
+    description = models.TextField(verbose_name='Описание')
+    price = models.DecimalField(max_digits=20, decimal_places=4, default=39.99, verbose_name='Цена')
+    image = models.ImageField(upload_to=upload_image_path, null=True, blank=True, verbose_name='Картинка')
+    featured = models.BooleanField(default=False, verbose_name='Рекомендован?')
+    active = models.BooleanField(default=False, verbose_name='Активен?')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
 
     # Manager
     objects = ProductManager()

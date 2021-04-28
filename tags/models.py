@@ -6,12 +6,12 @@ from colorfield.fields import ColorField
 
 
 class Tag(models.Model):
-    title = models.CharField(max_length=120)
-    color = ColorField(default='#FF0000')
-    slug = models.SlugField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=True)
-    products = models.ManyToManyField(Product, blank=True)
+    title = models.CharField(max_length=120, verbose_name='Наименование')
+    color = ColorField(default='#FF0000', verbose_name='Цвет')
+    slug = models.SlugField(blank=True, verbose_name='Ярлык')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+    active = models.BooleanField(default=True, verbose_name='Активен?')
+    products = models.ManyToManyField(Product, blank=True, verbose_name='Товары')
 
     def __str__(self):
         return self.title

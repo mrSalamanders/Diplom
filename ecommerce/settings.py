@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'colorfield',
+    'crispy_forms',
 
     # our apps
     'accounts',
@@ -149,3 +150,5 @@ GRAPH_MODELS = {
   'all_applications': True,
   'group_models': True,
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

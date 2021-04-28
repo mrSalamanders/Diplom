@@ -32,12 +32,12 @@ class CartManager(models.Manager):
 
 
 class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    products = models.ManyToManyField(Product, blank=True)
-    subtotal = models.DecimalField(max_digits=30, decimal_places=4, default=0)
-    total = models.DecimalField(max_digits=30, decimal_places=4, default=0)
-    updated_at = models.DateTimeField(auto_now=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Пользователь')
+    products = models.ManyToManyField(Product, blank=True, verbose_name='Товары')
+    subtotal = models.DecimalField(max_digits=30, decimal_places=4, default=0, verbose_name='Предытог')
+    total = models.DecimalField(max_digits=30, decimal_places=4, default=0, verbose_name='Итого')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
 
     objects = CartManager()
 

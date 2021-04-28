@@ -28,11 +28,11 @@ class BillingProfileManager(models.Manager):
 
 
 class BillingProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Пользователь')
     email = models.EmailField()
-    active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True, verbose_name='Активен?')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
 
     def __str__(self):
         return self.email

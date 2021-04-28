@@ -63,15 +63,15 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     active = models.BooleanField(
         default=True,
-        verbose_name='Активен'
+        verbose_name='Активен?'
     )
     staff = models.BooleanField(
         default=False,
-        verbose_name='Работник'
+        verbose_name='Работник?'
     )
     superuser = models.BooleanField(
         default=False,
-        verbose_name='Админ'
+        verbose_name='Админ?'
     )
 
     USERNAME_FIELD = 'email'    # username
@@ -111,12 +111,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class GuestEmail(models.Model):
-    full_name = models.TextField()
+    full_name = models.CharField(
+        max_length=240,
+        verbose_name='Полное имя'
+    )
     email = models.EmailField()
-    reason = models.TextField()
-    # active = models.BooleanField(default=True)
+    reason = models.TextField(verbose_name='Причина обращения')
     updated_at = models.DateField(auto_now=True)
-    # created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.email
