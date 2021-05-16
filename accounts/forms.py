@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+# from phonenumber_field.modelfields import PhoneNumberField
+from phonenumber_field.formfields import PhoneNumberField
 
 User = get_user_model()
 
@@ -100,6 +102,7 @@ class RegisterForm(forms.Form):
             }
         )
     )
+    phone = PhoneNumberField()
     password = forms.CharField(
         label='Пароль',
         widget=forms.PasswordInput(
@@ -152,4 +155,5 @@ class GuestForm(forms.Form):
             }
         )
     )
+    phone = PhoneNumberField()
     reason = "ПОКУПКА"

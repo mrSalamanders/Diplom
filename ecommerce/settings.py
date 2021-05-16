@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'colorfield',
     'crispy_forms',
+    'phonenumber_field',
 
     # our apps
     'accounts',
@@ -152,3 +153,6 @@ GRAPH_MODELS = {
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+PHONENUMBER_DB_FORMAT = "NATIONAL"
+PHONENUMBER_DEFAULT_REGION = "RU"

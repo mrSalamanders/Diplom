@@ -6,9 +6,15 @@
 
 {% block content %}
 
-    <div class="jumbotron">
+    <div class="jumbotron" style="border-radius: 15px">
         <h1 class="display-4">Добро пожаловать в Autobest!</h1>
-        <p class="lead">Наша станция техоблсуживания работает с давних пор на благо автомобилистов и предоставляет первоклассное качество.</p>
+        <p class="lead">
+            15 лет на рынке автоуслуг!
+            <br>
+            Современное оборудование, высококвалифицированные специалисты.
+            <br>
+            Полная сертификация услуг и гарантия качества.
+        </p>
         <hr class="my-4">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -39,13 +45,219 @@
 
     </div>
 
-    <div class="jumbotron">
+    <div class="jumbotron" style="border-radius: 25px">
         <h1 class="display-4">Техосмотр по ГОСТу</h1>
         <p class="lead">На нашей станции Вам доступен технический осмотр транспортного средства по Государственным стандартам.</p>
     </div>
 
-    <div class="jumbotron">
-        <h1 class="display-4">Реставрация рычагов подвески</h1>
+    <div class="jumbotron" style="border-radius: 25px">
+        <h1 class="display-4">Наши услуги</h1>
+
+        {#        <section class="page-section bg-light" id="portfolio">#}
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 col-sm-2 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+
+                            <img class="img-fluid" src="static/services/sus1.png" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Восстановление рычагов подвески</div>
+                            <div class="portfolio-caption-subheading text-muted">Уникальная технология</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-2 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+
+                            <img class="img-fluid" src="static/services/diag1.png" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Компьютерная диагностика</div>
+                            <div class="portfolio-caption-subheading text-muted">Поиск ошибок</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-2 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+
+                            <img class="img-fluid" src="static/services/wheels1.png" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Развал-схождение</div>
+                            <div class="portfolio-caption-subheading text-muted">3D</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-2 mb-4 mb-lg-0">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+
+                            <img class="img-fluid" src="static/services/engine1.png" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Ремонт ГРМ</div>
+                            <div class="portfolio-caption-subheading text-muted">Замена</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+        {#        </section>#}
+
+        <!-- Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl px-5 py-2">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Восстановление рычагов подвески</h2>
+                                    <p class="item-intro text-muted">Наша технология не имеет ничего общего с восстановительным ремонтом способом горячего шприцевания полимером по технологии SJR. Все работы по восстановлению работоспособности ведутся при полной разборке шаровых шарниров.
+                                    </p>
+                                    <img class="img-fluid d-block mx-auto" src="static/services/sus2.png" alt="..." />
+                                    <hr>
+                                    <p>
+                                        Проводится визуальный осмотр и измерение геометрических параметров пальца и корпуса на возможность восстановления. Если при осмотре и измерении выявлено, что палец сильно изношен или деформирован, то проводится замена пальца. <br>
+                                        Сфера пальца шлифуется на специальном станке, при этом происходит контроль отклонения формы сферы в соответствии с нормативными документами. После шлифовки сфера пальца полируется.<br>
+                                        Вкладыши изготавливаются индивидуально для каждого шарнира, в зависимости от геометрических параметров пальца и корпуса. Вкладыш изготавливается на специальной литьевой установке с использованием высококачественного антифрикционного материала. Для изготовления вкладышей мы используем полимер премиум-качества, который обладает стабильными характеристиками по своим физико-химическим и механическим свойствам и обеспечивает высочайшую устойчивость к широкому диапазону температур и износостойкость.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl px-5 py-2">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Развал-схождение</h2>
+                                    <p class="item-intro text-muted">3D</p>
+                                    <img class="img-fluid d-block mx-auto" src="static/services/wheels2.png" alt="..." />
+                                    <hr>
+                                    <p>
+                                    Современный 3D станок учитывает рекомендации всех производителей автомобилей по величинам развала и схождения, а процедура исключает возможность человеческой ошибки. Основное требование для проведения процедуры – полностью исправные детали подвески, исключающие самопроизвольное изменение положения колесных ступиц. В случае невозможности выставления нормируемых производителем автомобиля величин, их “гуляния”, программа сообщает об отклонении от заданных параметров. Впрочем, уже при начале процедуры мастера предварительно стараются выявить слабые места подвески, если таковые имеются.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl px-5 py-2">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Компьютерная диагностика</h2>
+                                    <p class="item-intro text-muted">Поиск и сброс ошибок. Диагностика двигателя.</p>
+                                    <img class="img-fluid d-block mx-auto" src="static/services/diag2.png" alt="..." />
+                                    <hr>
+                                    <p>
+                                        Проведение данного вида диагностики помогает выявить причину неисправностей в работе двигателя. К основным признакам неисправностей относятся: замедление при нажатии на педаль газа, длительный разогрев двигателя, автомобиль плохо заводится или вообще не запускается, увеличен расход топлива, при движении двигатель автомобиля издает посторонние шумы, стуки или автомобиль испускает черные, белые выхлопы, двигатель автомобиля работает неустойчиво и др.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl px-5 py-2">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Ремонт ГРМ</h2>
+                                    <p class="item-intro text-muted">Ремонт клапанного механизма, замена ремня ГРМ.</p>
+                                    <img class="img-fluid d-block mx-auto" src="static/services/engine2.png" alt="..." />
+                                    <hr>
+                                    <p>
+                                        Механизм газораспределения (принятое сокращение ГРМ) включает в себя впускные и выпускные клапана, сёдла, пружины, втулки клапанов, маслоотражательные колпачки, газовые каналы в головке блока цилиндров, толкатели, рычаги (при их наличии), гидрокомпенсаторы тепловых зазоров (также при наличии), распределительный вал (возможно – с системой изменения фаз газораспределения) со звёздочкой и приводной ремень с натяжителем и роликами.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl px-5 py-2">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Восстановление рычагов подвески</h2>
+                                    <p class="item-intro text-muted">Наша технология не имеет ничего общего с восстановительным ремонтом способом горячего шприцевания полимером по технологии SJR. Все работы по восстановлению работоспособности ведутся при полной разборке шаровых шарниров.</p>
+                                    <img class="img-fluid d-block mx-auto" src="static/services/sus2.png" alt="..." />
+                                    <hr>
+                                    <p>
+                                        Проводится визуальный осмотр и измерение геометрических параметров пальца и корпуса на возможность восстановления. Если при осмотре и измерении выявлено, что палец сильно изношен или деформирован, то проводится замена пальца. <br>
+                                        Сфера пальца шлифуется на специальном станке, при этом происходит контроль отклонения формы сферы в соответствии с нормативными документами. После шлифовки сфера пальца полируется.<br>
+                                        Вкладыши изготавливаются индивидуально для каждого шарнира, в зависимости от геометрических параметров пальца и корпуса. Вкладыш изготавливается на специальной литьевой установке с использованием высококачественного антифрикционного материала. Для изготовления вкладышей мы используем полимер премиум-качества, который обладает стабильными характеристиками по своим физико-химическим и механическим свойствам и обеспечивает высочайшую устойчивость к широкому диапазону температур и износостойкость.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl px-5 py-2">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Восстановление рычагов подвески</h2>
+                                    <p class="item-intro text-muted">Наша технология не имеет ничего общего с восстановительным ремонтом способом горячего шприцевания полимером по технологии SJR. Все работы по восстановлению работоспособности ведутся при полной разборке шаровых шарниров.</p>
+                                    <img class="img-fluid d-block mx-auto" src="static/services/sus2.png" alt="..." />
+                                    <hr>
+                                    <p>
+                                        Проводится визуальный осмотр и измерение геометрических параметров пальца и корпуса на возможность восстановления. Если при осмотре и измерении выявлено, что палец сильно изношен или деформирован, то проводится замена пальца. <br>
+                                        Сфера пальца шлифуется на специальном станке, при этом происходит контроль отклонения формы сферы в соответствии с нормативными документами. После шлифовки сфера пальца полируется.<br>
+                                        Вкладыши изготавливаются индивидуально для каждого шарнира, в зависимости от геометрических параметров пальца и корпуса. Вкладыш изготавливается на специальной литьевой установке с использованием высококачественного антифрикционного материала. Для изготовления вкладышей мы используем полимер премиум-качества, который обладает стабильными характеристиками по своим физико-химическим и механическим свойствам и обеспечивает высочайшую устойчивость к широкому диапазону температур и износостойкость.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <p class="lead">Только у нас уникальная опция: восстановление рычагов подвески.</p>
         <hr class="my-4">
         <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
@@ -76,5 +288,7 @@
         </div>
 
     </div>
+
+
 
 {% endblock %}

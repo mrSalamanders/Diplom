@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
+from phonenumber_field.modelfields import PhoneNumberField
+# from phonenumber_field.formfields import PhoneNumberField
 
 
 class UserManager(BaseUserManager):
@@ -48,6 +50,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         unique=True,
         max_length=80,
         verbose_name='Email'
+    )
+    phone = PhoneNumberField(
+        verbose_name='Телефон',
+        null=False,
+        blank=False
     )
     first_name = models.CharField(
         null=True,
@@ -115,9 +122,15 @@ class GuestEmail(models.Model):
         max_length=240,
         verbose_name='Полное имя'
     )
+    phone = PhoneNumberField(
+        verbose_name='Телефон',
+        null=False,
+        blank=False
+    )
     email = models.EmailField()
     reason = models.TextField(verbose_name='Причина обращения')
-    updated_at = models.DateField(auto_now=True)
+    seen = models.BooleanField(verbose_name='Обработан', default=False)
+    updated_at = models.DateField(auto_now=True, verbose_name='Дата обновления')
 
     def __str__(self):
         return self.email
