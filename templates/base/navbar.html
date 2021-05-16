@@ -7,46 +7,46 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-  <a class="navbar-brand" href="/">{{ site_title }}</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" href="/">{{ site_title }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item {% if request.path == cart_home_url %}active{% endif %}">
-        <a class="nav-link nav-cart-count" href="{% url 'carts:home' %}">{{ request.session.cart_items }} 🛒</a>
-      </li>
-      <li class="nav-item {% if request.path == products_list_url %}active{% endif %}">
-        <a class="nav-link" href="{% url "products:list" %}">Все товары</a>
-      </li>
-      <li class="nav-item {% if request.path == contact_url %}active{% endif %}">
-        <a class="nav-link" href="{% url "contact_url" %}">Обратиться к нам</a>
-      </li>
-     {% if request.user.is_authenticated %}
-     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Профиль
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% if user.is_superuser %}
-              <a class="dropdown-item" href="{% url 'admin:index' %}">Админ-панель</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {% if request.path == cart_home_url %}active{% endif %}">
+                <a class="nav-link nav-cart-count" href="{% url 'carts:home' %}">{{ request.session.cart_items }} 🛒</a>
+            </li>
+            <li class="nav-item {% if request.path == products_list_url %}active{% endif %}">
+                <a class="nav-link" href="{% url "products:list" %}">Все товары</a>
+            </li>
+            <li class="nav-item {% if request.path == contact_url %}active{% endif %}">
+                <a class="nav-link" href="{% url "contact_url" %}">Обратиться к нам</a>
+            </li>
+            {% if request.user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Профиль
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% if user.is_superuser %}
+                            <a class="dropdown-item" href="{% url 'admin:index' %}">Админ-панель</a>
+                        {% endif %}
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'accounts:logout' %}">Выйти</a>
+                    </div>
+                </li>
+
+
+            {% else %}
+                <li class="nav-item {% if request.path == login_url %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'accounts:login' %}">Войти</a>
+                </li>
+                <li class="nav-item {% if request.path == register_url %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'accounts:register' %}">Зарегистрироваться</a>
+                </li>
             {% endif %}
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'accounts:logout' %}">Выйти</a>
-        </div>
-      </li>
-
-
-     {% else %}
-      <li class="nav-item {% if request.path == login_url %}active{% endif %}">
-        <a class="nav-link" href="{% url 'accounts:login' %}">Войти</a>
-      </li>
-      <li class="nav-item {% if request.path == register_url %}active{% endif %}">
-        <a class="nav-link" href="{% url 'accounts:register' %}">Зарегистрироваться</a>
-      </li>
-     {% endif %}
-    </ul>
-    {% include 'search/snippets/search-form.html' %}
-  </div>
+        </ul>
+        {% include 'search/snippets/search-form.html' %}
+    </div>
 </nav>

@@ -19,28 +19,103 @@
     {% include "base/js.html" %}
 
     {% block bottom %}
-        <footer class="footer py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">
-                        Copyright &copy; Autobest
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                    </div>
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-vk"></i></a>
-                    </div>
-{#                    <div class="col-lg-4 text-lg-right">#}
-{#                        <a class="mr-3" href="#!">Privacy Policy</a>#}
-{#                        <a href="#!">Terms of Use</a>#}
-{#                    </div>#}
-                </div>
-            </div>
-        </footer>
+
     {% endblock %}
 
     <script src="{% static 'js/search.js' %}"></script>
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted mt-5">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <!-- Left -->
+    <div class="me-2 d-none d-lg-block">
+      <span>Мы в социальных сетях:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="https://www.instagram.com/autobest_vsevolozhsk/" class="btn btn-social mx-2 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://vk.com/autobest134" class="btn btn-social mx-2 text-reset">
+        <i class="fab fa-vk"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-6">
+      <!-- Grid row -->
+      <div class="row mt-3">
+{#        <!-- Grid column -->#}
+{#        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">#}
+{#          <!-- Content -->#}
+{#          <h6 class="text-uppercase fw-bold mb-4">#}
+{#            <i class="fas fa-gem me-3"></i>Autobest#}
+{#          </h6>#}
+{#          <p>#}
+{#            ВЛОЖЕНИЕ В ДВИЖЕНИЕ | ЗАПЧАСТИ И СЕРВИС#}
+{#          </p>#}
+{#        </div>#}
+{#        <!-- Grid column -->#}
+
+{#        <!-- Grid column -->#}
+{#        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">#}
+{#          <!-- Links -->#}
+{#          <h6 class="text-uppercase fw-bold mb-4">#}
+{#            Useful links#}
+{#          </h6>#}
+{#          <p>#}
+{#            <a href="#!" class="text-reset">Pricing</a>#}
+{#          </p>#}
+{#          <p>#}
+{#            <a href="#!" class="text-reset">Settings</a>#}
+{#          </p>#}
+{#          <p>#}
+{#            <a href="#!" class="text-reset">Orders</a>#}
+{#          </p>#}
+{#          <p>#}
+{#            <a href="#!" class="text-reset">Help</a>#}
+{#          </p>#}
+{#        </div>#}
+{#        <!-- Grid column -->#}
+
+        <!-- Grid column -->
+        <div class="row-md-4 row-lg-3 row-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <p><i class="fas fa-home me-3"></i> Пушкинская ул., 128, Всеволожск, Россия | Стация технического послегарантийного обслуживания</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            autobest_pro@mail.ru
+          </p>
+          <p><i class="fas fa-phone me-3"></i>8 (960) 259-44-00</p>
+          <p><i class="fas fa-print me-3"></i>8 (906) 252-77-47</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © <script>
+                    document.write(new Date().getFullYear());
+                </script>
+<a class="text-reset fw-bold" href="">Autobest</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
 </body>
 </html>
