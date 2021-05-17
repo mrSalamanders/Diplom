@@ -19,10 +19,10 @@ def register_page(request):
         last_name = data.get('last_name')
         new_user = User.objects.create_user(email, password, first_name, last_name)
         if new_user is not None:
-            messages.success(request, "Created User.")
+            messages.success(request, "Успешно зарегистрированы.")
             return redirect('accounts:login')
         
-        messages.warning(request, "Create Error !")
+        messages.warning(request, "Ошибка регистрации.")
 
 
     context = {
@@ -60,7 +60,7 @@ def login_page(request):
             else:
                 return redirect('home_url')
         else:
-            messages.warning(request, 'Credentials error.')
+            messages.warning(request, 'Неверное имя пользователя и/или пароль.')
 
     return render(request, "accounts/login.html", context)
 

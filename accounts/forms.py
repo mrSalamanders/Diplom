@@ -102,7 +102,15 @@ class RegisterForm(forms.Form):
             }
         )
     )
-    phone = PhoneNumberField()
+    phone = PhoneNumberField(
+        label='Телефон',
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "8(999)888-77-66"
+            }
+        )
+    )
     password = forms.CharField(
         label='Пароль',
         widget=forms.PasswordInput(
@@ -140,6 +148,7 @@ class RegisterForm(forms.Form):
 
 class GuestForm(forms.Form):
     full_name = forms.CharField(
+        label='Полное имя',
         widget=forms.TextInput(
             attrs={
                 "class": "form-control",
@@ -148,6 +157,7 @@ class GuestForm(forms.Form):
         )
     )
     email = forms.EmailField(
+        label='E-mail',
         widget=forms.EmailInput(
             attrs={
                 "class": "form-control",
@@ -155,5 +165,13 @@ class GuestForm(forms.Form):
             }
         )
     )
-    phone = PhoneNumberField()
+    phone = PhoneNumberField(
+        label='Телефон',
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "8(999)888-77-66"
+            }
+        )
+    )
     reason = "ПОКУПКА"
