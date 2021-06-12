@@ -24,7 +24,7 @@
                   <td><a href="{% url 'products:detail' product.slug %}">{{product.title}}</a></td>
                   <td>{{product.price|floatformat:2|localize }}</td>
                   <td>
-                      <button type="button" class="btn btn-outline-secondary">-</button> 1 <button type="button" class="btn btn-outline-secondary">+</button>
+{#                      <button type="button" class="btn btn-outline-secondary">-</button> 1 <button type="button" class="btn btn-outline-secondary">+</button>#}
 
                       {% include "carts/snippets/remove-product.html" with product_id=product.id cart=cart %}
                   </td>
