@@ -9,9 +9,9 @@ from phonenumber_field.modelfields import PhoneNumberField
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, first_name=None, last_name=None, is_active=True, is_staff=False, is_superuser=False):
         if not email:
-            raise ValueError('Users must have an email address')
+            raise ValueError('У пользователей должен быть email')
         if not password:
-            raise ValueError('Users must have a password')
+            raise ValueError('У пользователей должен быть пароль')
 
         user_obj = self.model(
             email=self.normalize_email(email),

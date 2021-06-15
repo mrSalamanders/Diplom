@@ -8,10 +8,10 @@ from decimal import Decimal
 
 
 ORDER_STATUS_CHOICES = (
-    ('created', 'Created'),
-    ('paid', 'Paid'),
-    ('shipped', 'Shipped'),
-    ('refunded', 'Refunded')
+    ('created', 'Создан'),
+    ('paid', 'Оплачен'),
+    ('shipped', 'Отправлен'),
+    ('refunded', 'Вернут')
 )
 
 
